@@ -120,6 +120,18 @@ export const config: VendureConfig = {
         AdminUiPlugin.init({
             route: 'admin',
             port: 3002,
+            app: compileUiExtensions({
+                outputPath: path.join(__dirname, '../admin-ui'),
+                extensions: [
+                    setBranding({
+                        smallLogoPath: path.join(__dirname, 'images/my-logo-sm.png'),
+                        largeLogoPath: path.join(__dirname, 'images/my-logo-lg.png'),
+                        faviconPath: path.join(__dirname, 'images/my-favicon.ico'),
+                    }),
+                ],
+            }),
+            
+            
             adminUiConfig: {
                 apiHost: isDev ? `http://${process.env.PUBLIC_DOMAIN}` : `https://${process.env.PUBLIC_DOMAIN}`,
                 // apiPort: +(process.env.PORT || 3000),
