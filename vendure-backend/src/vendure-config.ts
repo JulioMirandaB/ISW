@@ -10,6 +10,7 @@ import { AdminUiPlugin } from '@vendure/admin-ui-plugin';
 import { StripePlugin } from '@vendure/payments-plugin/package/stripe';
 import 'dotenv/config';
 import path from 'path';
+import { compileUiExtensions, setBranding } from '@vendure/ui-devkit/compiler';
 
 const isDev: Boolean = process.env.APP_ENV === 'dev';
 
