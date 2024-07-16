@@ -124,12 +124,11 @@ export const config: VendureConfig = {
                 outputPath: path.join(__dirname, '../admin-ui'),
                 extensions: [
                     setBranding({
-
-
-                        smallLogoPath: 'https://aeiom.com/isw/Logo-ISW-oficial.png',  // URL for the small logo
-                        largeLogoPath: 'https://aeiom.com/isw/Logo-ISW-oficial.png',  // URL for the large logo
-                        faviconPath: 'https://aeiom.com/isw/favicon.ico',  // URL for the favicon
-    
+                        // The small logo appears in the top left of the screen  
+                        smallLogoPath: path.join(__dirname, 'images/my-logo-sm.png'),
+                        // The large logo is used on the login page  
+                        largeLogoPath: path.join(__dirname, 'images/my-logo-lg.png'),
+                        faviconPath: path.join(__dirname, 'images/my-favicon.ico'),
                     }),
                 ],
             }),
