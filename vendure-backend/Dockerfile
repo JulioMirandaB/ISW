@@ -9,6 +9,9 @@ RUN npm install -g concurrently
 
 COPY . .
 
+RUN mkdir -p dist/assets/images
+COPY src/assets/images dist/assets/images
+
 RUN npm run build
 
 CMD ["sh", "-c", "npm run seed:once && npm run start"]
