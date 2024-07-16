@@ -125,9 +125,9 @@ export const config: VendureConfig = {
                 outputPath: path.join(__dirname, '../admin-ui'),
                 extensions: [
                     setBranding({
-                        smallLogoPath: path.join(__dirname, '..', 'assets', 'images', 'my-logo-sm.png'),
-                        largeLogoPath: path.join(__dirname, '..', 'assets', 'images', 'my-logo-lg.png'),
-                        faviconPath: path.join(__dirname, '..', 'assets', 'images', 'favicon.ico'),
+                        smallLogoPath: path.join(__dirname, 'assets', 'images', 'my-logo-sm.png'),
+                        largeLogoPath: path.join(__dirname, 'assets', 'images', 'my-logo-lg.png'),
+                        faviconPath: path.join(__dirname, 'assets', 'images', 'favicon.ico'),
                       }),
                 ],
             }),
