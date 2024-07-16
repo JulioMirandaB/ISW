@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.14.10",
-    "@vendure/cli": "^2.2.4",
+    "@vendure/cli": "^2.2.7",
     "concurrently": "8.2.2"
   }
 }
