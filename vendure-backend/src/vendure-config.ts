@@ -123,6 +123,7 @@ export const config: VendureConfig = {
             app: compileUiExtensions({
                 outputPath: path.join(__dirname, '../admin-ui'),
                 extensions: [
+
                     setBranding({
                         // The small logo appears in the top left of the screen  
                         smallLogoPath: path.join(__dirname, 'images/my-logo-sm.png'),
