@@ -15,7 +15,7 @@ export async function loader({ request }: LoaderArgs) {
 export default function Index() {
   const { collections } = useLoaderData<typeof loader>();
   const { t } = useTranslation();
-  const headerImage = collections[0]?.featuredAsset?.preview;
+  const headerImage = collections[5]?.featuredAsset?.preview;
 
   return (
     <>
