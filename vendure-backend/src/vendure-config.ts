@@ -12,6 +12,24 @@ import 'dotenv/config';
 import path from 'path';
 import { compileUiExtensions, setBranding } from '@vendure/ui-devkit/compiler';
 
+
+
+export const config: VendureConfig = {
+    // other configurations...
+    customFields: {
+        Product: [
+            {
+                name: 'productPdf',
+                type: 'string',
+                label: 'Product PDF URL',
+                public: true,
+            },
+        ],
+    },
+    // other configurations...
+};
+
+
 const isDev: Boolean = process.env.APP_ENV === 'dev';
 
 const sgMail = require('@sendgrid/mail');
