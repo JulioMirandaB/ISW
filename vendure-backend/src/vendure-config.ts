@@ -12,24 +12,6 @@ import 'dotenv/config';
 import path from 'path';
 import { compileUiExtensions, setBranding } from '@vendure/ui-devkit/compiler';
 
-
-
-export const config: VendureConfig = {
-    // other configurations...
-    customFields: {
-        Product: [
-            {
-                name: 'productPdf',
-                type: 'string',
-                label: 'Product PDF URL',
-                public: true,
-            },
-        ],
-    },
-    // other configurations...
-};
-
-
 const isDev: Boolean = process.env.APP_ENV === 'dev';
 
 const sgMail = require('@sendgrid/mail');
@@ -105,7 +87,17 @@ export const config: VendureConfig = {
     },
     // When adding or altering custom field definitions, the database will
     // need to be updated. See the "Migrations" section in README.md.
-    customFields: {},
+    customFields: {
+        Product: [
+            {
+                name: 'productPdf',
+                type: 'string',
+                label: [{ languageCode: 'en', value: 'Product PDF URL' }],
+                public: true,
+            },
+        ],
+    },
+    },
     plugins: [
         AssetServerPlugin.init({
             route: 'assets',
