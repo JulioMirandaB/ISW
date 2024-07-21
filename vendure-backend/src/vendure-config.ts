@@ -87,17 +87,7 @@ export const config: VendureConfig = {
     },
     // When adding or altering custom field definitions, the database will
     // need to be updated. See the "Migrations" section in README.md.
-    customFields: {
-        Product: [
-            {
-                name: 'productPdf',
-                type: 'string',
-                label: [{ languageCode: 'en', value: 'Product PDF URL' }],
-                public: true,
-            },
-        ],
-    
-    },
+    customFields: {},
     plugins: [
         AssetServerPlugin.init({
             route: 'assets',
