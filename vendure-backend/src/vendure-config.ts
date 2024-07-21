@@ -11,6 +11,7 @@ import { StripePlugin } from '@vendure/payments-plugin/package/stripe';
 import 'dotenv/config';
 import path from 'path';
 import { compileUiExtensions, setBranding } from '@vendure/ui-devkit/compiler';
+import { CmsPlugin } from './plugins/cms/cms.plugin';
 
 const isDev: Boolean = process.env.APP_ENV === 'dev';
 
@@ -136,5 +137,6 @@ export const config: VendureConfig = {
                 // apiPort: +(process.env.PORT || 3000),
             },
         }),
+        CmsPlugin.init({}),
     ],
 };
