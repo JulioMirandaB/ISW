@@ -96,7 +96,7 @@ export const config: VendureConfig = {
                 public: true,
             },
         ],
-    },
+    
     },
     plugins: [
         AssetServerPlugin.init({
