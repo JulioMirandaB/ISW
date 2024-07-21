@@ -11,7 +11,6 @@ import { StripePlugin } from '@vendure/payments-plugin/package/stripe';
 import 'dotenv/config';
 import path from 'path';
 import { compileUiExtensions, setBranding } from '@vendure/ui-devkit/compiler';
-import { CmsPlugin } from './plugins/cms/cms.plugin';
 
 const isDev: Boolean = process.env.APP_ENV === 'dev';
 
@@ -88,7 +87,17 @@ export const config: VendureConfig = {
     },
     // When adding or altering custom field definitions, the database will
     // need to be updated. See the "Migrations" section in README.md.
-    customFields: {},
+    customFields: {
+        Product: [
+            {
+                name: 'Pdf',
+                type: 'string',
+                label: [{ languageCode: 'en', value: '\ PDF URL' }],
+                public: true,
+            },
+        ],
+    
+    },
     plugins: [
         AssetServerPlugin.init({
             route: 'assets',
@@ -137,6 +146,5 @@ export const config: VendureConfig = {
                 // apiPort: +(process.env.PORT || 3000),
             },
         }),
-        CmsPlugin.init({}),
     ],
 };
