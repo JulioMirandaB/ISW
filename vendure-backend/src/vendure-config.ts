@@ -92,7 +92,6 @@ export const config: VendureConfig = {
             {
                 name: 'Pdf',
                 type: 'string',
-                label: [{ languageCode: LanguageCode.en, value: 'PDF' }],
             },
         ],
     
