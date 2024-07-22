@@ -12,8 +12,6 @@ import 'dotenv/config';
 import path from 'path';
 import { compileUiExtensions, setBranding } from '@vendure/ui-devkit/compiler';
 import { AssetServerPlugin } from '@vendure/asset-server-plugin';
-import { Asset } from '@vendure/core';
-
 
 export const config = {
     plugins: [
@@ -106,15 +104,12 @@ export const config: VendureConfig = {
     customFields: {
         Product: [
             {
-                name: 'pdfFile',
-                type: 'relation',
-                entity: Asset,
+                name: 'Pdf',
+                type: 'string',
                 public: true,
             },
         ],
     },
-    
-    
     
     plugins: [
         AssetServerPlugin.init({

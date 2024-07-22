@@ -2586,7 +2586,7 @@
     tslib "^2.6.2"
     zone.js "~0.14.4"
 
-"@vendure/asset-server-plugin@2.2.4":
+"@vendure/asset-server-plugin@^2.2.4":
   version "2.2.4"
   resolved "https://registry.npmjs.org/@vendure/asset-server-plugin/-/asset-server-plugin-2.2.4.tgz"
   integrity sha512-pu4Sdmqm0LhnHBHmt6RGWqi2ckcZjFLub40HXCnZKyt1arkvWcUmWvnBH++YvyUSKSpnRXNDt/dKU8v2CDY5Ag==
