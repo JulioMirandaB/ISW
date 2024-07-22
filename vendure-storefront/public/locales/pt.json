@@ -223,8 +223,8 @@
     "intro": "Compre roupas e equipamentos de proteção de alta qualidade para máxima segurança e conforto",
     "link": "Para compras em grandes quantidades ou pedidos especiais, entre em contato com industrialsafetywear.ca@gmail.com",
     "demoCredentials": "Credenciais de demonstração",
-    "exclusive": "Exclusivo: Adquira o seu",
-    "repoLinkLabel": "Kit inicial GRATUITO para vitrine",
+    "exclusive": "Para pedidos em grande quantidade, por favor entre em contato com",
+    "repoLinkLabel": "info@industrialsafetywear.ca",
     "registrationMessage": "O registro da conta não é compatível com a instância de demonstração do Vendure. ",
     "registrationError": "O registro não pode ser usado na loja de demonstração Vendure! "
   }

@@ -36,7 +36,7 @@ export function Header({
             <p className="hidden sm:block">
               {t('vendure.exclusive')}{' '}
               <a
-                href="https://funkyton.com/vendure-tutorial/"
+                href="mailto:info@industrialsafetywear.ca"
                 target="_blank"
                 className="underline"
               >
