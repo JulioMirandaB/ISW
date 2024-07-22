@@ -11,6 +11,22 @@ import { StripePlugin } from '@vendure/payments-plugin/package/stripe';
 import 'dotenv/config';
 import path from 'path';
 import { compileUiExtensions, setBranding } from '@vendure/ui-devkit/compiler';
+import { AssetServerPlugin } from '@vendure/asset-server-plugin';
+import { Asset } from '@vendure/core';
+
+
+export const config = {
+    plugins: [
+        AssetServerPlugin.init({
+            storageStrategyFactory: () => new LocalAssetStorageStrategy({
+                uploadPath: './files',
+                permittedFileTypes: ['image/*', 'application/pdf'],
+            }),
+            route: 'files',
+        }),
+    ],
+    // other configurations
+};
 
 
 const isDev: Boolean = process.env.APP_ENV === 'dev';
@@ -90,12 +106,15 @@ export const config: VendureConfig = {
     customFields: {
         Product: [
             {
-                name: 'Pdf',
-                type: 'string',
+                name: 'pdfFile',
+                type: 'relation',
+                entity: Asset,
                 public: true,
             },
         ],
     },
+    
+    
     
     plugins: [
         AssetServerPlugin.init({
