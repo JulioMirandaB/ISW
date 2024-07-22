@@ -229,11 +229,7 @@ export default function ProductSlug() {
                       t('product.addToCart')
                     )}
                   </button>
-                  <a href="{{ product.customFields.productPdf }}" download>
-                      <button
-                      type="button"
-                      className="ml-4 py-3 px-3 rounded-md flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500">Download Product PDF</button>
-                  </a>
+                  
                   <button
                     type="button"
                     className="ml-4 py-3 px-3 rounded-md flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500"
@@ -251,6 +247,11 @@ export default function ProductSlug() {
               <div className="mt-2 flex items-center space-x-2">
                 <span className="text-gray-500">{selectedVariant?.sku}</span>
                 <StockLevelLabel stockLevel={selectedVariant?.stockLevel} />
+                <a href="{{ product.customFields.Pdf }}" download>
+                      <button
+                      type="button"
+                      className="ml-4 py-3 px-3 rounded-md flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500">Spec Sheet PDF</button>
+                  </a>
               </div>
               {addItemToOrderError && (
                 <div className="mt-4">
