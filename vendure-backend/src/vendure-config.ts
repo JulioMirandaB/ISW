@@ -10,6 +10,8 @@ import { AdminUiPlugin } from '@vendure/admin-ui-plugin';
 import { StripePlugin } from '@vendure/payments-plugin/package/stripe';
 import 'dotenv/config';
 import path from 'path';
+import { compileUiExtensions, setBranding } from '@vendure/ui-devkit/compiler';
+
 
 const isDev: Boolean = process.env.APP_ENV === 'dev';
 
@@ -128,6 +130,16 @@ export const config: VendureConfig = {
         AdminUiPlugin.init({
             route: 'admin',
             port: 3002,
+            app: compileUiExtensions({
+                outputPath: path.join(__dirname, '../admin-ui'),
+                extensions: [
+                    setBranding({
+                        smallLogoPath: path.join(__dirname, 'assets', 'images', 'my-logo-sm.png'),
+                        largeLogoPath: path.join(__dirname, 'assets', 'images', 'my-logo-lg.png'),
+                        faviconPath: path.join(__dirname, 'assets', 'images', 'favicon.ico'),
+                      }),
+                ],
+            }),
             adminUiConfig: {
                 apiHost: isDev ? `http://${process.env.PUBLIC_DOMAIN}` : `https://${process.env.PUBLIC_DOMAIN}`,
                 // apiPort: +(process.env.PORT || 3000),
